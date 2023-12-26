@@ -43,7 +43,7 @@ print(time_obj_tz.isoformat())
 
 # Insert the raw content into the database
 echo -n "[+] Insert raw content - "
-psql "$POSTGRES_DSN" -v updated_at="$updated_at" -v content="$file_contents" <<SQL
+/opt/homebrew/opt/libpq/bin/psql "$POSTGRES_DSN" -v updated_at="$updated_at" -v content="$file_contents" <<SQL
   INSERT INTO plutus.raw_contents
   VALUES (:'updated_at', :'content')
   ON CONFLICT DO NOTHING
@@ -63,7 +63,7 @@ while IFS= read -r line; do
 
     # Insert the price into the database
     echo -n "[+] Update price: $price_name - $updated_at - "
-    psql "$POSTGRES_DSN" -v data_source_id="sjc.com.vn" -v name="$(echo "$price_name" | xargs)" -v updated_at="$updated_at" -v buy="$buy" -v sell="$sell" -v unit="$unit" <<SQL
+    /opt/homebrew/opt/libpq/bin/psql "$POSTGRES_DSN" -v data_source_id="sjc.com.vn" -v name="$(echo "$price_name" | xargs)" -v updated_at="$updated_at" -v buy="$buy" -v sell="$sell" -v unit="$unit" <<SQL
       INSERT INTO plutus.prices
         (data_source_id, name, updated_at, buy, sell, unit)
       VALUES
