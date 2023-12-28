@@ -11,7 +11,13 @@ mkdir -p "$data_directory"
 declare -A product_map=(
   ["Nữ%20Trang%2041.7%"]="Nữ Trang 41.7%"
   ["Nữ%20Trang%2068%"]="Nữ Trang 68%"
-  # ... (add more products here)
+  ["Nữ%20Trang%2099%"]="Nữ Trang 99%"
+  ["Nữ%20Trang%2099.99%"]="Nữ Trang 99.99%"
+  ["SJC%201L,%2010L,%201KG"]="SJC 1L, 10L, 1KG"
+  ["SJC%202c%2C%201C%2C%205%20ph%C3%A2n"]="SJC 2c, 1C, 5 phân"
+  ["SJC%205c"]="SJC 5c"
+  ["V%C3%A0ng%20nh%E1%BA%ABn%20SJC%2099%2C99%200.3%20ch%E1%BB%89%2C%200.5%20ch%E1%BB%89"]="Vàng nhẫn SJC 99,99 0.3 chỉ, 0.5 chỉ"
+  ["V%C3%A0ng%20nh%E1%BA%ABn%20SJC%2099%2C99%201%20ch%E1%BB%89%2C%202%20ch%E1%BB%89%2C%205%20ch%E1%BB%89"]="Vàng nhẫn SJC 99,99 1 chỉ, 2 chỉ, 5 chỉ"
 )
 
 # Function to download data for a specific product
