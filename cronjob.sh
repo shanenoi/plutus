@@ -50,12 +50,14 @@ echo -n "[+] Insert raw content - "
 SQL
 
 index=0
+prices=0
 while IFS= read -r line; do
   fixed_line=$(echo "$line" | sed 's/<br[^>]*>//g')
   price_name=$(grep -o 'td class="br bb ylo2_text p12"[^<]*' <<< "$fixed_line" | sed 's/^[^>]*>//g')
 
   # Check if the price_name is not empty
   if [[ -n "$price_name" ]]; then
+    ((prices++))
     # shellcheck disable=SC2094
     buy=$(awk -v i=$((index+2)) 'NR == i {gsub(/<[^<>]*>/, ""); gsub(/[, ]/, ""); print}' "$filename")
     # shellcheck disable=SC2094
@@ -74,3 +76,4 @@ SQL
 
   ((index++))
 done < "$filename"
+echo "[+] Done! - $prices prices detected."
