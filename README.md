@@ -1,5 +1,8 @@
 # Plutus
 
+
+<center><img height="400" src="./assets/plutus.jpeg" width="400"/></center>
+
 Plutus is a data crawling project designed to fetch **SJC** gold price data from a specific website and store it in a database. The collected data can then be visualized using Grafana to generate charts and graphs. Additionally, historical data from the past 1 or 2 years can be obtained from another website.
 
 ## Getting Started
